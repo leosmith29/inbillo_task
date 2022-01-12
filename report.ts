@@ -48,4 +48,4 @@ function report(logs : Array<Object>) : Array<Users>{
 //SQL QUERY 
 let sql : string;
 today = new Date().toLocaleDateString();
-sql = `SELECT fin_operation as type, u.banknumber FROM logTransaction logs LEFT JOIN users u ON u.id = logs.userId WHERE u.id is not null and logs.log_date = ${today}`;
+sql = `SELECT fin_operation as type, u.banknumber,logs.amount FROM logTransaction logs LEFT JOIN users u ON u.id = logs.userId WHERE u.id is not null and logs.log_date = ${today}`;
