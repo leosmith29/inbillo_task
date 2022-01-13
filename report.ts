@@ -22,7 +22,7 @@ function report(logs : Array<Object>) : Array<Users>{
                 switch(element['type']){
                     case 'inbound':{
                         reports.map((val ,indx : number)=>{
-                            if(val == element['banknumber']){
+                            if(val.banknumber == element['banknumber']){
                                 reports[indx].debit = (reports[indx].debit - (element['amount']))
                             }
                         })
@@ -30,7 +30,7 @@ function report(logs : Array<Object>) : Array<Users>{
                     break;
                     case 'outbound':{
                         reports.map((val ,indx : number)=>{
-                            if(val == element['banknumber']){
+                            if(val.banknumber == element['banknumber']){
                                 reports[indx].debit = (reports[indx].debit + (element['amount']))
                             }
                         })   
